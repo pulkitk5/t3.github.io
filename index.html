@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template 3</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"
+      data-auto-replace-svg="nest"
+    ></script>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      header {
+        height: 100vh;
+        background: url("bg.png");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .head-container {
+        display: flex;
+        background: rgba(18, 22, 61, 0.8);
+        margin: auto;
+        width: 100%;
+        height: 100px;
+        font-family: "Russo One", sans-serif;
+        position: fixed;
+        top: 0;
+        z-index: 10000;
+      }
+
+      .logo,
+      .nav-bar {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        display: flex;
+        align-items: center;
+      }
+
+      .logo {
+        flex: 1;
+        margin-left: 100px;
+      }
+
+      .logo-img {
+        height: 70px;
+      }
+
+      .nav-bar {
+        flex: 2;
+        justify-content: flex-end;
+        margin-right: 50px;
+      }
+
+      .nav-list {
+        display: flex;
+        list-style-type: none;
+        font-size: 18px;
+        letter-spacing: 1px;
+      }
+
+      .nav-items a {
+        padding: 10px;
+        text-decoration: none;
+        color: white;
+      }
+
+      .nav-items a:hover {
+        background: white;
+        color: rgb(18, 22, 61);
+        transition: 0.5s ease;
+      }
+
+      .sm-icons {
+        display: flex;
+        list-style-type: none;
+      }
+
+      .tab {
+        display: none;
+        color: white;
+      }
+
+      #check {
+        display: none;
+      }
+
+      .tab i {
+        padding: 5px;
+        font-size: 30px;
+        cursor: pointer;
+      }
+
+      main {
+        width: 100%;
+        padding: 20px;
+      }
+
+      .about {
+        width: 100%;
+      }
+
+      .about h1 {
+        text-align: center;
+        font-size: 50px;
+        font-family: "Russo One", sans-serif;
+        letter-spacing: 3px;
+        color: rgb(26, 4, 91);
+      }
+
+      .about p {
+        text-align: justify;
+        font-size: 24px;
+        margin: 40px 40px;
+        font-family: "Oswald", sans-serif;
+      }
+
+      .ser-container {
+        width: 100%;
+        padding: 20px;
+        background: rgb(26, 4, 91);
+      }
+
+      .services {
+        display: flex;
+        width: 100%;
+      }
+
+      .ser-container-h1 {
+        text-align: center;
+        font-size: 50px;
+        font-family: "Russo One", sans-serif;
+        color: white;
+        letter-spacing: 3px;
+      }
+
+      .ser1 {
+        flex: 1;
+        width: 80%;
+        height: 500px;
+        margin: auto;
+      }
+
+      .ser1-d {
+        margin: 10% 10%;
+        height: 65%;
+        width: 80%;
+        background: white;
+        background: url("team1.jpg");
+        background-size: cover;
+        background-position: center;
+        transition: width 0.5s, height 0.5s, margin 0.5s;
+      }
+
+      .ser1-d:hover {
+        margin: 5% 5%;
+        width: 85%;
+        height: 70%;
+      }
+
+      .ser1 h1,
+      .ser1 h2 {
+        font-family: "Russo One", sans-serif;
+        letter-spacing: 3px;
+        color: white;
+        text-align: center;
+        opacity: 0.6;
+      }
+
+      .ser2 {
+        flex: 1;
+        width: 80%;
+        height: 500px;
+        margin: auto;
+      }
+
+      .ser2-d {
+        margin: 10% 10%;
+        height: 65%;
+        width: 80%;
+        background: white;
+        background: url("team3.jpg");
+        background-size: cover;
+        background-position: center;
+        transition: width 0.5s, height 0.5s, margin 0.5s;
+      }
+
+      .ser2 h1,
+      .ser2 h2 {
+        font-family: "Russo One", sans-serif;
+        letter-spacing: 3px;
+        color: white;
+        text-align: center;
+        opacity: 0.6;
+      }
+
+      .ser2-d:hover {
+        margin: 5% 5%;
+        width: 85%;
+        height: 70%;
+      }
+
+      .ser3 {
+        flex: 1;
+        width: 80%;
+        height: 500px;
+        margin: auto;
+      }
+
+      .ser3-d {
+        margin: 10% 10%;
+        height: 65%;
+        width: 80%;
+        background: white;
+        background: url("team2.jpg");
+        background-size: cover;
+        background-position: center;
+        transition: width 0.5s, height 0.5s, margin 0.5s;
+      }
+
+      .ser3 h1,
+      .ser3 h2 {
+        font-family: "Russo One", sans-serif;
+        letter-spacing: 3px;
+        color: white;
+        text-align: center;
+        opacity: 0.6;
+      }
+
+      .ser3-d:hover {
+        margin: 5% 5%;
+        width: 85%;
+        height: 70%;
+      }
+
+      .events {
+        padding: 20px;
+        height: auto;
+        width: 100%;
+        background: url("bg1.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .event-h1 {
+        text-align: center;
+        font-family: "Russo One", sans-serif;
+        font-size: 50px;
+        color: white;
+        letter-spacing: 3px;
+      }
+
+      .e1,
+      .e2,
+      .e3 {
+        position: relative;
+        height: 400px;
+        width: 100%;
+        margin: 20px;
+      }
+
+      .e1-img,
+      .e2-img,
+      .e3-img {
+        position: absolute;
+        width: 350px;
+        height: 350px;
+      }
+
+      .e1-text,
+      .e2-text,
+      .e3-text {
+        position: absolute;
+        width: 350px;
+        height: 250px;
+        text-align: center;
+        font-family: "Russo One", sans-serif;
+      }
+
+      .e1-img,
+      .e3-img {
+        left: 20%;
+      }
+
+      .e2-img {
+        right: 20%;
+      }
+
+      .e1-text,
+      .e3-text {
+        right: 20%;
+        top: 35%;
+      }
+
+      .e2-text {
+        left: 20%;
+        top: 35%;
+      }
+
+      .e1-text p,
+      .e3-text p {
+        text-align: center;
+        color: white;
+        font-size: 30px;
+      }
+
+      .e2-text p {
+        text-align: center;
+        color: white;
+        font-size: 30px;
+      }
+
+      .overlay {
+        position: absolute;
+        bottom: 100.1%;
+        left: 0;
+        right: 0;
+        background: rgba(26, 4, 91, 0.7);
+        overflow: hidden;
+        width: 100%;
+        height: 0;
+        transition: 0.5s ease;
+      }
+
+      .e1-img:hover .overlay,
+      .e2-img:hover .overlay,
+      .e3-img:hover .overlay {
+        bottom: 0;
+        height: 100%;
+      }
+
+      .over-text {
+        font-family: "Russo One", sans-serif;
+
+        color: white;
+        font-size: 16px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+
+      .foot {
+        position: relative;
+        background: black;
+        height: 80px;
+        width: 100%;
+        color: white;
+      }
+
+      @media screen and (max-width: 1300px) {
+        .e1-img,
+        .e3-img,
+        .e2-text {
+          left: 12%;
+          transition: 0.5s linear;
+        }
+
+        .e1-text,
+        .e3-text,
+        .e2-img {
+          right: 12%;
+          transition: 0.5s linear;
+        }
+      }
+
+      @media screen and (max-width: 1024px) {
+        .logo {
+          margin-left: 40px;
+          transition: 1s linear;
+        }
+
+        .e1-img,
+        .e3-img,
+        .e2-text {
+          left: 7%;
+          transition: 0.5s linear;
+        }
+
+        .e1-text,
+        .e3-text,
+        .e2-img {
+          right: 7%;
+          transition: 0.5s linear;
+        }
+      }
+
+      @media screen and (max-width: 900px) {
+        .nav-bar {
+          justify-content: flex-end;
+          margin-right: 30px;
+        }
+
+        .nav-list {
+          position: fixed;
+          width: 60%;
+          height: 100vh;
+          background: rgba(18, 22, 61, 0.6);
+          right: -100%;
+          top: 100px;
+          flex-direction: column;
+          align-items: center;
+          transition: 1s ease;
+          font-size: 25px;
+        }
+
+        .nav-items {
+          margin: 20px;
+        }
+
+        .top {
+          margin-top: 40px;
+        }
+
+        .container {
+          flex-direction: column;
+        }
+
+        .tab {
+          display: block;
+          transition: 1s ease;
+        }
+
+        .tab:hover {
+          background: white;
+          color: rgb(18, 22, 61);
+          transition: 0.5s ease;
+        }
+
+        #check:checked ~ .nav-list {
+          right: 0;
+        }
+
+        .first {
+          flex-direction: column;
+        }
+
+        .services {
+          flex-direction: column;
+        }
+
+        .ser2 {
+          margin: 12% 10%;
+        }
+
+        .e1-img,
+        .e2-img,
+        .e3-img {
+          width: 300px;
+          height: 300px;
+          transition: 0.5s linear;
+        }
+
+        .e1-text,
+        .e2-text,
+        .e3-text {
+          top: 25%;
+          width: 300px;
+          height: 200px;
+          transition: 0.5s linear;
+        }
+
+        .e1-img,
+        .e3-img,
+        .e2-text {
+          left: 7%;
+        }
+
+        .e1-text,
+        .e3-text,
+        .e2-img {
+          right: 7%;
+        }
+      }
+
+      @media screen and (max-width: 780px) {
+        .e1-img,
+        .e3-img,
+        .e2-text {
+          left: 6%;
+        }
+
+        .e1-text,
+        .e3-text,
+        .e2-img {
+          right: 6%;
+        }
+
+        .e1-img,
+        .e2-img,
+        .e3-img {
+          width: 270px;
+          height: 300px;
+        }
+
+        .e1-text,
+        .e2-text,
+        .e3-text {
+          width: 270px;
+          height: 200px;
+        }
+      }
+
+      @media screen and (max-width: 660px) {
+        .e1-img,
+        .e3-img,
+        .e2-text {
+          left: 6%;
+        }
+
+        .e1-text,
+        .e3-text,
+        .e2-img {
+          right: 6%;
+        }
+
+        .e1-img,
+        .e2-img,
+        .e3-img {
+          width: 240px;
+          height: 270px;
+        }
+
+        .e1-text,
+        .e2-text,
+        .e3-text {
+          width: 240px;
+          height: 200px;
+        }
+      }
+
+      @media screen and (max-width: 610px) {
+        .e1-img,
+        .e3-img,
+        .e2-text {
+          left: 6%;
+        }
+
+        .e1-text,
+        .e3-text,
+        .e2-img {
+          right: 6%;
+        }
+
+        .e1-img,
+        .e2-img,
+        .e3-img {
+          width: 160px;
+          height: 240px;
+        }
+
+        .e1-text,
+        .e2-text,
+        .e3-text {
+          width: 160px;
+          height: 160px;
+          top: 15%;
+        }
+
+        .e1,
+        .e2,
+        .e3 {
+          height: 300px;
+        }
+
+        .about p {
+          font-size: 20px;
+        }
+      }
+
+      @media screen and (max-width: 425px) {
+        .e1-img,
+        .e3-img,
+        .e2-text {
+          left: 2%;
+        }
+
+        .e1-text,
+        .e3-text,
+        .e2-img {
+          right: 6%;
+        }
+
+        .e1-img,
+        .e2-img,
+        .e3-img {
+          width: 135px;
+          height: 160px;
+        }
+
+        .e1-text,
+        .e2-text,
+        .e3-text {
+          width: 135px;
+          height: 120px;
+          top: 15%;
+        }
+
+        .e1,
+        .e2,
+        .e3 {
+          height: 200px;
+        }
+
+        .e1-text p,
+        .e2-text p,
+        .e3-text p {
+          font-size: 22px;
+        }
+
+        .over-text {
+          font-size: 12px;
+        }
+
+        .about p {
+          font-size: 16px;
+        }
+      }
+
+      @media screen and (max-width: 375px) {
+        .e1-img,
+        .e3-img,
+        .e2-text {
+          left: 1%;
+        }
+
+        .e1-text,
+        .e3-text,
+        .e2-img {
+          right: 5%;
+        }
+
+        .e1-img,
+        .e2-img,
+        .e3-img {
+          width: 110px;
+          height: 140px;
+        }
+
+        .e1-text,
+        .e2-text,
+        .e3-text {
+          width: 110px;
+          height: 100px;
+          top: 20%;
+        }
+
+        .e1,
+        .e2,
+        .e3 {
+          height: 150px;
+        }
+
+        .e1-text p,
+        .e2-text p,
+        .e3-text p {
+          font-size: 18px;
+        }
+
+        .over-text {
+          font-size: 10px;
+        }
+      }
+
+      @media screen and (max-width: 320px) {
+      }
+
+      @media screen and (max-width: 500px) {
+        .nav-list {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="head-container">
+        <div class="logo">
+          <a href=""><img src="logo.png" class="logo-img" /></a>
+        </div>
+
+        <nav class="nav-bar">
+          <input type="checkbox" id="check" />
+          <label for="check" class="tab">
+            <i class="fas fa-bars"></i>
+          </label>
+          <ul class="nav-list">
+            <li class="nav-items top"><a href="#">HOME</a></li>
+
+            <li class="nav-items"><a href="#abt">ABOUT</a></li>
+            <li class="nav-items"><a href="#team">TEAM</a></li>
+            <li class="nav-items"><a href="#evnt">EVENTS</a></li>
+
+            <li class="nav-items">
+              <ul class="sm-icons">
+                <li class="icons">
+                  <a href=""><i class="fab fa-facebook"></i></a>
+                </li>
+                <li class="icons">
+                  <a href=""><i class="fab fa-instagram"></i></a>
+                </li>
+                <li class="icons">
+                  <a href=""><i class="fab fa-twitter"></i></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="cdown">
+        <div class="clock"></div>
+      </div>
+
+      <script
+        src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"
+      ></script>
+
+      <script src="countdown.js"></script>
+      <script type="text/javascript">
+        $("#clock").countdown("2020/08/30", function (event) {});
+      </script>
+    </header>
+
+    <main>
+      <div class="about" id="abt">
+        <h1>ABOUT</h1>
+        <p>
+          Symbiosis Centre for Information Technology, a constituent of
+          Symbiosis International University has been a pioneer and a leader in
+          imparting education in the niche area of Information Technology
+          Business Management in India for more than a decade. SCIT nurture
+          genuine IT talent To become future leaders in Information Technology
+          arena. SCIT welcomes those, who are willing To take on challenges and
+          transform themselves into proactive professionals. The institute
+          supports their transformation with innovative teaching-learning
+          methodology, state-of-the-art computer labs, platform for peer
+          learning and opportunities To learn management in real time. The
+          success of our alumni is a proof To claim that - SCIT ensures overall
+          professional development of students, who are transformed into
+          industry-ready IT professionals.
+        </p>
+      </div>
+      <div class="ser-container" id="team">
+        <h1 class="ser-container-h1">TEAM</h1>
+        <div class="services">
+          <div class="ser1">
+            <div class="ser1-d"></div>
+            <h1>NAME</h1>
+            <h2>POST</h2>
+          </div>
+
+          <div class="ser2">
+            <div class="ser2-d"></div>
+            <h1>NAME</h1>
+            <h2>POST</h2>
+          </div>
+
+          <div class="ser3">
+            <div class="ser3-d"></div>
+            <h1>NAME</h1>
+            <h2>POST</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="events" id="evnt">
+        <h1 class="event-h1">EVENTS</h1>
+        <div class="e1">
+          <div class="e1-img">
+            <img
+              src="e1.jpg"
+              style="width: inherit; height: inherit; border: 5px solid black"
+            />
+            <div class="overlay">
+              <div class="over-text"><h1>Details about Event 1</h1></div>
+            </div>
+          </div>
+          <div class="e1-text"><p>Details about Event 1</p></div>
+        </div>
+        <div class="e2">
+          <div class="e2-img">
+            <img
+              src="e2.jpg"
+              style="width: inherit; height: inherit; border: 5px solid black"
+            />
+            <div class="overlay">
+              <div class="over-text"><h1>Details about Event 2</h1></div>
+            </div>
+          </div>
+          <div class="e2-text">
+            <p>Details about Event 2</p>
+          </div>
+        </div>
+        <div class="e3">
+          <div class="e3-img">
+            <img
+              src="e3.jpg"
+              style="width: inherit; height: inherit; border: 5px solid black"
+            />
+            <div class="overlay">
+              <div class="over-text"><h1>Details about Event 3</h1></div>
+            </div>
+          </div>
+          <div class="e3-text"><p>Details about Event 3</p></div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="foot"></div>
+    </footer>
+  </body>
+</html>
